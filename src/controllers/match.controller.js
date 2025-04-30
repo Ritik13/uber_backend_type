@@ -15,7 +15,9 @@ const matchRequest = async (req, res) => {
   }, {
     delay: 15000,
     attempts: 3,
-    backoff: { type: 'fixed', delay: 15000 }
+    backoff: { type: 'fixed', delay: 15000},
+    removeOnComplete: true,
+    removeOnFail: true
   });
 
   return res.status(404).json({ message: "No available driver nearby, retrying shortly" });
