@@ -1,4 +1,4 @@
-const matchRider = require('../services/matching.service');
+const matchRider = require('../service/matching.service');
 const matchRetryQ = require('../queus/matchRetry.q');
 
 const matchRequest = async (req, res) => {

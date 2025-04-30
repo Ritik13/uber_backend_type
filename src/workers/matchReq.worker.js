@@ -1,6 +1,6 @@
 const { Worker } = require('bullmq');
 const redis = require('../config/redis');
-const matchRider = require('../services/matching.service');
+const matchRider = require('../service/matching.service');
 
 const worker = new Worker('matchRetryQueue', async (job) => {
   const { rider_id, pickup_lat, pickup_lng, drop_lat, drop_lng } = job.data;
